@@ -1,10 +1,10 @@
 import styled from 'styled-components';
-import Header from './modules/Header';
+import Home from './modules/Home';
 
 const App = () => {
   return (
     <Main className="App">
-      <Header />
+      <Home />
     </Main>
   );
 }

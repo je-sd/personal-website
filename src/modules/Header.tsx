@@ -7,20 +7,8 @@ const Header = () => {
         <>
             <StyledHeader>
                 <Logo />
-                
             </StyledHeader>
-            <Marquee style={{ 
-                    backgroundColor: "#2e2e2e",
-                    height: "1.5rem",
-                    color: "white",
-                    padding: "5px",
-            }}>
-                Jan Etschel Softwaredesign -- 
-                JESd -- 
-                Ihr Ansprechpartner rund um IT-Lösungen aller Art -- 
-                Konzeption, Entwicklung und Betreeung von Softwareprojekten, Websiten, Apps, Spielen, oder welche Idee Sie sonst auch immer haben sollten -- 
-                Kontakt unter mail@janetschel.com oder auf GitHub unter /je-sd -- 
-            </Marquee>
+            
         </>
     );
 };
@@ -46,3 +34,18 @@ const Logo = styled.div`
     height: 100%;
     width: 25rem;
 `;
+
+/*
+<Marquee style={{ 
+        backgroundColor: "#2e2e2e",
+        height: "1.5rem",
+        color: "white",
+        padding: "5px",
+}}>
+    Jan Etschel Softwaredesign -- 
+    JESd -- 
+    Ihr Ansprechpartner rund um IT-Lösungen aller Art -- 
+    Konzeption, Entwicklung und Betreeung von Softwareprojekten, Websiten, Apps, Spielen, oder welche Idee Sie sonst auch immer haben sollten -- 
+    Kontakt unter mail@janetschel.com oder auf GitHub unter /je-sd -- 
+</Marquee>
+*/
