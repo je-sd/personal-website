@@ -1,12 +1,15 @@
-import React from 'react';
-import './App.css';
+import styled from 'styled-components';
 
 const App = () => {
   return (
-    <div className="App">
+    <Main className="App">
       Hello World
-    </div>
+    </Main>
   );
 }
 
 export default App;
+
+const Main = styled.div`
+  text-align: center;
+`;
