@@ -11,7 +11,7 @@ const BlogPostPreview = ({id} : BlogPostPreviewProps) => {
 
     return (
         <StyledBlogPostPreview onClick={() => navigate(`/blog/${id}`)}>
-            <Typography variant="h6" className="heading">Heading big bro</Typography>
+            <Typography variant="h6" className="heading">Heading basnmasnd</Typography>
             <Typography variant="caption" className="caption">2017-23-2 Jan Etschel</Typography>
             <Typography>Preview of text</Typography>
         </StyledBlogPostPreview>
@@ -41,6 +41,8 @@ const StyledBlogPostPreview = styled.div`
     grid-gap: 2rem;
 
     padding: 2rem;
+
+    max-width: 30rem;
 
     border: 1px solid #212121;
     border-radius: 2rem;
