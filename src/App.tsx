@@ -104,8 +104,6 @@ const App = () => {
   if (init) {
     return (
       <Main>
-        <MouseTrail strokeColor={"white"}/>
-
         <BrowserRouter>
           <Routes>
             <Route path="/sd" element={ <Home /> } />

@@ -26,6 +26,8 @@ const StyledBlogPost = styled.div`
     position: relative;
     z-index: 1;
 
+    margin-bottom: 5rem;
+
     h4 {
         font-weight: 700;
         grid-area: heading;

@@ -16,6 +16,13 @@ const Blog = () => {
                     <BlogPostPreview id={1}/>
                     <BlogPostPreview id={2}/>
                     <BlogPostPreview id={3}/>
+                    <BlogPostPreview id={3}/>
+                    <BlogPostPreview id={3}/>
+                    <BlogPostPreview id={3}/>
+                    <BlogPostPreview id={3}/>
+                    <BlogPostPreview id={3}/>
+                    <BlogPostPreview id={3}/>
+                    <BlogPostPreview id={3}/>
                     <BlogPostPreview id={4}/>
                 </div>
             </div>
@@ -30,6 +37,8 @@ const StyledBlog = styled.div`
 
     position: relative;
     z-index: 1;
+
+    margin-bottom: 5rem;
 
     grid-template-rows: 4rem auto;
     grid-template-areas: "menu" "blog-wrapper";
