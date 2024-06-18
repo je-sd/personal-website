@@ -5,7 +5,7 @@ const Footer = () => {
     return (
         <StyledFooter>
             <Typography variant="caption" className="imprint">Jan Etschel Softwaredesign (JESd), Richard-Wagner-Str. 69, 91522 Ansbach</Typography>
-            <Typography variant="caption" className="contact">Kontakt:</Typography>
+            <Typography variant="caption" className="contact">Contact:</Typography>
             <Link variant="caption" className="mail" underline="none" style={{ color: "#702963"}} href="mailto:mail@janetschel.com">mail@janetschel.com</Link>
         </StyledFooter>
     );
