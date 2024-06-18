@@ -7,7 +7,7 @@ import LibraryBooksIcon from '@mui/icons-material/LibraryBooks';
 const Header = () => {
     return (
         <StyledHeader>
-            <LibraryBooksIcon className="blog"/>
+            <LibraryBooksIcon className="blog" style={{fill: "rgba(255, 255, 255, 0.25)"}}/>
         </StyledHeader>
     );
 };
