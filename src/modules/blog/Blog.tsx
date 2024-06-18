@@ -5,7 +5,7 @@ import Header from "../Header";
 const Blog = () => {
     return (
         <StyledBlog>
-            <Header />
+            <Header onBlog />
         </StyledBlog>
     );
 };
