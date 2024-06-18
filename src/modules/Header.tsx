@@ -2,12 +2,15 @@ import { Typography } from "@mui/material";
 import styled from "styled-components";
 
 import LibraryBooksIcon from '@mui/icons-material/LibraryBooks';
+import { useNavigate } from "react-router-dom";
 
 
 const Header = () => {
+    const navigate = useNavigate();
+
     return (
         <StyledHeader>
-            <LibraryBooksIcon className="blog" style={{fill: "rgba(255, 255, 255, 0.25)"}}/>
+            <LibraryBooksIcon className="blog" style={{fill: "rgba(255, 255, 255, 0.25)"}} onClick={() => navigate("/blog")}/>
         </StyledHeader>
     );
 };
