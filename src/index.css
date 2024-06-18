@@ -72,3 +72,22 @@ code {
   }
 
 }
+
+@media screen and (max-height: 680px) {
+  div.home > svg.circle {
+    transform: translate(0, -14rem) !important;
+  }
+}
+
+@media screen and (max-height: 625px) {
+  div.home > svg.circle {
+    transform: translate(0, -12.5rem) !important;
+  }
+}
+
+@media screen and (max-height: 570px) {
+  div.home > svg.circle {
+    transform: translate(0, -10.75rem) !important;
+  }
+}
+
