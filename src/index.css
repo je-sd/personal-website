@@ -1,13 +1,74 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root {
+  background-color: #212121;
+
+  ::-moz-selection { /* Code for Firefox */
+    background-color: #702963;
+  }
+  
+  ::selection {
+    background: #702963;
+  }
+}
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: "Space Mono", monospace !important;
+  font-weight: 400;
+  font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: white;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.colorful {
+  color: #702963 !important;
+}
+
+.colorful::-moz-selection { /* Code for Firefox */
+  background-color: white !important;
+}
+
+.colorful::selection {
+  background: white !important;
+}
+
+@media screen and (max-width: 600px) {
+  div.home{
+    grid-template-rows: auto auto 10rem;
+    grid-template-columns: auto;
+    grid-template-areas: "header" "projects" "footer";
+  }
+
+  div.home > div.header {
+    margin-top: 2.25rem;
+  }
+
+  div.home > div.header, div.home > div.projects { 
+    justify-self: center;
+  }
+
+  div.home > div.header > div.caption > p { 
+    font-size: 18px !important;
+  }
+
+  div.home > div.header > div.caption > p.sd::after { 
+    width: 12rem;
+    height: 60px;
+
+    background-color: white;
+    transform: translate(-11rem, -1rem) rotate(-2deg);
+    border-radius: 5px;
+  }
+
+  div.home > svg.circle {
+    transform: translate(0, -18rem) !important;
+  }
+
 }
