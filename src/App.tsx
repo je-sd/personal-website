@@ -12,6 +12,8 @@ import styled from "styled-components";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Footer from "./modules/Footer";
 import Blog from "./modules/blog/Blog";
+import { MouseTrail } from "@stichiboi/react-elegant-mouse-trail";
+import BlogPost from "./modules/blog/BlogPost";
 
 const App = () => {
   const [init, setInit] = useState(false);
@@ -102,10 +104,13 @@ const App = () => {
   if (init) {
     return (
       <Main>
+        <MouseTrail strokeColor={"white"}/>
+
         <BrowserRouter>
           <Routes>
             <Route path="/sd" element={ <Home /> } />
             <Route path="/blog" element={ <Blog /> } />
+            <Route path="/blog/:id" element={ <BlogPost /> } />
 
             <Route
               path="*"

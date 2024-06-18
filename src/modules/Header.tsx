@@ -8,9 +8,10 @@ import { useNavigate } from "react-router-dom";
 
 interface HeaderProps {
     onBlog: boolean,
+    onBlogPost: boolean,
 }
 
-const Header = ({ onBlog } : HeaderProps) => {
+const Header = ({ onBlog, onBlogPost } : HeaderProps) => {
     const navigate = useNavigate();
 
     return (
@@ -19,7 +20,7 @@ const Header = ({ onBlog } : HeaderProps) => {
                 !onBlog ? 
                     <LibraryBooksIcon className="blog" style={{fill: "rgba(255, 255, 255, 0.25)"}} onClick={() => navigate("/blog")}/>
                 :
-                    <ReplyAllIcon className="blog" style={{fill: "rgba(255, 255, 255, 0.25)"}} onClick={() => navigate("/sd")}/>
+                    <ReplyAllIcon className="blog" style={{fill: "rgba(255, 255, 255, 0.25)"}} onClick={() => onBlogPost ? navigate("/blog") : navigate("/sd")}/>
             }
         </StyledHeader>
     );
