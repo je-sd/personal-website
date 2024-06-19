@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { Typography } from "@mui/material";
-import { MouseTrail } from "@stichiboi/react-elegant-mouse-trail";
 import Projects from "./Projects";
 import Footer from "./Footer";
 import Header from "./Header";

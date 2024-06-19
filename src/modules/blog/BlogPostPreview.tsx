@@ -4,16 +4,19 @@ import styled from "styled-components";
 
 interface BlogPostPreviewProps {
     id: number,
+    copyright: string,
+    heading: string,
+    content: string,
 }
 
-const BlogPostPreview = ({id} : BlogPostPreviewProps) => {
+const BlogPostPreview = ({id, heading, copyright, content} : BlogPostPreviewProps) => {
     const navigate = useNavigate();
 
     return (
         <StyledBlogPostPreview onClick={() => navigate(`/blog/${id}`)}>
-            <Typography variant="h6" className="heading">Heading basnmasnd</Typography>
-            <Typography variant="caption" className="caption">2017-23-2 Jan Etschel</Typography>
-            <Typography>Preview of text</Typography>
+            <Typography variant="h6" className="heading">{heading}</Typography>
+            <Typography variant="caption" className="caption">{copyright}</Typography>
+            <Typography>{content}</Typography>
         </StyledBlogPostPreview>
     );
 };

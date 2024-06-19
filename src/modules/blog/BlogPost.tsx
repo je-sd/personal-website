@@ -1,21 +1,50 @@
-import { Typography } from "@mui/material";
+import { LinearProgress, Typography } from "@mui/material";
 import styled from "styled-components";
 import Header from "../Header";
 import { useParams } from "react-router-dom";
 import Markdown from 'react-markdown'
+import { useEffect, useState } from "react";
+import { BlogPostModel } from "../../api/model/BlogPostModel";
+import { Supabase } from "../../api/supabase";
+import remarkGfm from 'remark-gfm';
+import rehypeRaw from 'rehype-raw';
 
 const BlogPost = () => {
     const params = useParams();
-    const markdown = '# Hi, *Pluto!*\n ## Placeholder'
+    const [blogPost, setBlogpost] = useState<BlogPostModel>();
+
+    useEffect(() => {
+        if (blogPost) {
+            return;
+        }
+
+        const id = +(params.id || 0);
+        Supabase.fetchSingleBlogPost(id).then(result => setBlogpost(result));
+    }, []);
 
     return (
         <StyledBlogPost>
             <Header onBlog onBlogPost/>
-            <div className="content">
-                <Typography variant="h4">How to use Node.JS to bundle webserver</Typography>
-                <Typography variant="caption" className="credits">from jan etschel published 2320-23-23</Typography>
-                <Markdown className="blogpost-content">{markdown}</Markdown>
-            </div>
+            
+            {
+                !blogPost ? <LinearProgress sx={{backgroundColor: '#702963',
+                    '& .MuiLinearProgress-bar': {
+                      backgroundColor: '#9f388c'
+                    }
+                }} /> :
+                <div className="content">
+                    <Typography variant="h4">{blogPost.heading}</Typography>
+                    <Typography variant="caption" className="credits">{blogPost.getCopyright()}</Typography>
+                    <Markdown
+                        remarkPlugins={[remarkGfm]}
+                        rehypePlugins={[rehypeRaw]} 
+                        className="blogpost-content"
+                    >
+                        {blogPost.getContent()}
+                    </Markdown>
+                </div>
+
+            }
         </StyledBlogPost>
     );
 };
@@ -33,9 +62,13 @@ const StyledBlogPost = styled.div`
         grid-area: heading;
     }
 
+    .header-component {
+        margin-top: -2.1rem;
+    }
+
     display: grid;
-    grid-template-rows: 4rem auto;
-    grid-template-areas: "menu" "content";
+    grid-template-rows: .1rem 3rem auto;
+    grid-template-areas: "." "menu" "content";
     grid-gap: 2rem;
 
     div.content {

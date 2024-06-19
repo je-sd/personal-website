@@ -15,7 +15,7 @@ const Header = ({ onBlog, onBlogPost } : HeaderProps) => {
     const navigate = useNavigate();
 
     return (
-        <StyledHeader>
+        <StyledHeader className="header-component">
             {
                 !onBlog ? 
                     <LibraryBooksIcon className="blog" style={{fill: "rgba(255, 255, 255, 0.25)"}} onClick={() => navigate("/blog")}/>

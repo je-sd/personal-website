@@ -2,8 +2,22 @@ import { Typography } from "@mui/material";
 import styled from "styled-components";
 import Header from "../Header";
 import BlogPostPreview from "./BlogPostPreview";
+import { useEffect, useState } from "react";
+import { Supabase } from "../../api/supabase";
+import { BlogPostModel } from "../../api/model/BlogPostModel";
+import BlogPost from "./BlogPost";
 
 const Blog = () => {
+    const [blogPosts, setBlogposts] = useState<Array<BlogPostModel>>();
+
+    useEffect(() => {
+        if (blogPosts) {
+            return;
+        }
+
+        Supabase.fetchBlogPosts().then(result => setBlogposts(result));
+    }, []);
+
     return (
         <StyledBlog>
             <Header onBlog onBlogPost={false}/>
@@ -13,17 +27,17 @@ const Blog = () => {
                 <Typography className="colorful" variant="h4">.</Typography>
 
                 <div className="previews">
-                    <BlogPostPreview id={1}/>
-                    <BlogPostPreview id={2}/>
-                    <BlogPostPreview id={3}/>
-                    <BlogPostPreview id={3}/>
-                    <BlogPostPreview id={3}/>
-                    <BlogPostPreview id={3}/>
-                    <BlogPostPreview id={3}/>
-                    <BlogPostPreview id={3}/>
-                    <BlogPostPreview id={3}/>
-                    <BlogPostPreview id={3}/>
-                    <BlogPostPreview id={4}/>
+                    {
+                        blogPosts && blogPosts.sort((first, second): number => first.id + second.id).map(post => 
+                            <BlogPostPreview
+                                key={post.id} 
+                                id={post.id}
+                                heading={post.heading}
+                                copyright={post.getCopyright()}
+                                content={post.getContentPreview()}
+                            />
+                        )
+                    }
                 </div>
             </div>
         </StyledBlog>

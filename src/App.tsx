@@ -10,9 +10,7 @@ import { loadSlim } from "@tsparticles/slim";
 import Home from "./modules/Home";
 import styled from "styled-components";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
-import Footer from "./modules/Footer";
 import Blog from "./modules/blog/Blog";
-import { MouseTrail } from "@stichiboi/react-elegant-mouse-trail";
 import BlogPost from "./modules/blog/BlogPost";
 
 const App = () => {
