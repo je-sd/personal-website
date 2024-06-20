@@ -30,7 +30,7 @@ const Blog = () => {
 
                 <div className="previews">
                     {
-                        blogPosts && blogPosts.sort((first, second): number => first.id - second.id).map(post => 
+                        blogPosts && blogPosts.sort((first, second): number => first.id + second.id).map(post => 
                             <BlogPostPreview
                                 key={post.id} 
                                 id={post.id}
