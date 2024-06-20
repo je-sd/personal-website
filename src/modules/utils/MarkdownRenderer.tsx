@@ -19,7 +19,7 @@ export function MarkdownRenderer({ children: markdown }: MarkdownRendererProps) 
           const match = /language-(\w+)/.exec(className || '');
 
           return !inline ? (
-            <SyntaxHighlighter style={dracula} PreTag="span" language={"java"} {...props}>
+            <SyntaxHighlighter style={dracula} PreTag="span" language={match} {...props}>
               {String(children).replace(/\n$/, '')}
             </SyntaxHighlighter>
           ) : (
