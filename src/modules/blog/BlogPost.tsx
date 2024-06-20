@@ -79,6 +79,9 @@ const StyledBlogPost = styled.div`
 
         grid-area: content;
 
+        justify-self: center;
+        justify-content: center;
+
         h4 {
             margin-bottom: 1rem;
             grid-area: header;

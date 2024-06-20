@@ -6,6 +6,11 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { MouseTrail } from '@stichiboi/react-elegant-mouse-trail';
 
+// Media queries
+import './styles/mediaqueries.modules/blogpost.modules.css';
+import './styles/mediaqueries.modules/blogoverview.modules.css';
+import './styles/mediaqueries.modules/home.modules.css';
+
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );

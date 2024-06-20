@@ -1,0 +1,14 @@
+@media screen and (max-width: 795px) {
+    div.blog-wrapper > div.previews {
+        grid-template-columns: auto !important;
+        grid-template-rows: auto;
+
+        justify-content: center;
+
+        grid-gap: 5rem;
+    }
+
+    div.blog-wrapper > div.previews > div {
+        max-width: 15rem;
+    }
+}
