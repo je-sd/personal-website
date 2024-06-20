@@ -1,0 +1,69 @@
+div.content > div.blogpost-content > h1 {
+    margin: 2rem 0;
+}
+
+div.content > div.blogpost-content > ul {
+    margin: 1rem 0;
+}
+
+div.content > div.blogpost-content > p > strong {
+    font-weight: 700;
+}
+
+div.content > div.blogpost-content > p > em {
+    font-style: italic;
+}
+
+div.content > div.blogpost-content > p > em > strong {
+    font-weight: 700;
+    font-style: italic;
+}
+
+div.content > div.blogpost-content > details > summary::marker {
+    color: #702963;
+}
+
+div.content > div.blogpost-content > details {
+    display: block;
+    
+    padding: 1rem;
+    margin: 1rem 0;
+
+    background-color: rgba(75, 75, 75, 0.2);
+    border-radius: .5rem;
+}
+
+div.content > div.blogpost-content > p > code,
+div.content > div.blogpost-content > pre > code {
+    display: block;
+    
+    padding: 1rem;
+    margin: 1rem 0;
+
+    background-color: rgba(75, 75, 75, 0.2);
+    border-radius: .5rem;
+
+}
+
+div.content > div.blogpost-content > blockquote > p {
+    color: rgba(255, 255, 255, .5);
+    padding: .5rem 0;
+    line-height: 2rem;
+
+    margin-left: 1rem;
+}
+
+div.content > div.blogpost-content > blockquote > p:before {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 2rem;
+    margin-left: -1rem;
+    background-color: rgba(255, 255, 255, .5);
+}
+
+div.content > div.blogpost-content > pre > span,
+div.content > div.blogpost-content > p > span {
+    display: block;
+    background-color: rgba(75, 75, 75, 0.2) !important;
+}

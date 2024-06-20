@@ -1,0 +1,35 @@
+@media screen and (max-width: 880px) {
+    div.content > div.blogpost-content {
+        width: 40rem !important;
+    }
+}
+
+@media screen and (max-width: 760px) {
+    div.content > div.blogpost-content {
+        width: 35rem !important;
+    }
+}
+
+@media screen and (max-width: 660px) {
+    div.content > div.blogpost-content {
+        width: 30rem !important;
+    }
+}
+
+@media screen and (max-width: 570px) {
+    div.content > div.blogpost-content {
+        width: 25rem !important;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    div.content > div.blogpost-content {
+        width: 20rem !important;
+    }
+}
+
+@media screen and (max-width: 390px) {
+    div.content > div.blogpost-content {
+        width: 17.5rem !important;
+    }
+}

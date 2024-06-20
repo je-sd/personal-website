@@ -9,6 +9,9 @@ import {
 import { loadSlim } from "@tsparticles/slim"; 
 import Home from "./modules/Home";
 import styled from "styled-components";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import Blog from "./modules/blog/Blog";
+import BlogPost from "./modules/blog/BlogPost";
 
 const App = () => {
   const [init, setInit] = useState(false);
@@ -99,12 +102,26 @@ const App = () => {
   if (init) {
     return (
       <Main>
-        <Home />
-        <Particles
-          id="tsparticles"
-          particlesLoaded={particlesLoaded}
-          options={options}
-        />
+        <BrowserRouter>
+          <Routes>
+            <Route path="/sd" element={ <Home /> } />
+            <Route path="/blog" element={ <Blog /> } />
+            <Route path="/blog/:id" element={ <BlogPost /> } />
+
+            <Route
+              path="*"
+              element={<Navigate to="/sd" replace />}
+            />
+
+          </Routes>
+
+          <Particles
+            id="tsparticles"
+            particlesLoaded={particlesLoaded}
+            options={options}
+          />
+
+        </BrowserRouter>
       </Main>
     );
   }
