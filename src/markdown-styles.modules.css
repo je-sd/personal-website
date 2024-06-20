@@ -1,6 +1,6 @@
 div.content > div.blogpost-content > h1,
 div.content > div.blogpost-content > h2,
-div.content > div.blogpost-content > h3, {
+div.content > div.blogpost-content > h3 {
     margin: 2rem 0;
 }
 
