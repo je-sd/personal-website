@@ -1,4 +1,4 @@
-import { Typography } from "@mui/material";
+import { CircularProgress, Typography } from "@mui/material";
 import styled from "styled-components";
 import Header from "../Header";
 import BlogPostPreview from "./BlogPostPreview";
@@ -25,6 +25,8 @@ const Blog = () => {
             <div className="blog-wrapper">
                 <Typography variant="h4" className="blog">blog</Typography>
                 <Typography className="colorful" variant="h4">.</Typography>
+
+                { !blogPosts && <CircularProgress color="secondary" /> }
 
                 <div className="previews">
                     {
@@ -66,6 +68,11 @@ const StyledBlog = styled.div`
 
         grid-area: blog-wrapper;
         grid-gap: 5rem 0;
+
+        > span[role=progressbar] {
+            justify-self: end; 
+            margin-right: 1.5rem;
+        }
     }
 
     h4 {
