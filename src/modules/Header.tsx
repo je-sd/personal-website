@@ -30,6 +30,7 @@ export default Header;
 
 const StyledHeader = styled.div`
     grid-area: menu;
+    z-index: 1;
     
     align-self: start;
 
