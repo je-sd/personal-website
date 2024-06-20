@@ -61,3 +61,9 @@ div.content > div.blogpost-content > blockquote > p:before {
     margin-left: -1rem;
     background-color: rgba(255, 255, 255, .5);
 }
+
+div.content > div.blogpost-content > pre > span,
+div.content > div.blogpost-content > p > span {
+    display: block;
+    background-color: rgba(75, 75, 75, 0.2) !important;
+}
