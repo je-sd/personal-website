@@ -16,7 +16,7 @@ const BlogPostPreview = ({id, heading, copyright, content} : BlogPostPreviewProp
         <StyledBlogPostPreview onClick={() => navigate(`/blog/${id}`)}>
             <Typography variant="h6" className="heading">{heading}</Typography>
             <Typography variant="caption" className="caption">{copyright}</Typography>
-            <Typography>{content}</Typography>
+            <Typography className="sneak-peak">{content}</Typography>
         </StyledBlogPostPreview>
     );
 };
@@ -30,6 +30,8 @@ const StyledBlogPostPreview = styled.div`
         text-decoration: underline;
         text-decoration-color: #702963;
         text-underline-offset: .2rem;
+
+        align-self: center;
     }
 
     .caption {
@@ -39,6 +41,10 @@ const StyledBlogPostPreview = styled.div`
         
     h6, p, span, .caption {
         justify-self: center !important;
+    }
+
+    > .sneak-peak {
+        text-align: justify;
     }
 
     display: grid;

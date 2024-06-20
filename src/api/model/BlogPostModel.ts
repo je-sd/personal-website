@@ -7,7 +7,6 @@ export class BlogPostModel {
     heading: string;
     private content: string;
 
-
     constructor(id: number, createdAt: string, createdBy: string, heading: string, content: string) {
         this.id = id;
         this.createdAt = createdAt;
@@ -25,6 +24,15 @@ export class BlogPostModel {
     };
 
     public getContentPreview = () => {
-        return `${this.content.substring(0, 2)}...`;
+        // private knownChars: Array<string> = ["#", "*", ">", "`"];
+        const cleanedUp = this.content
+            .replaceAll("#", "")
+            .replaceAll("*", "")
+            .replaceAll(">", "")
+            .replaceAll("<", "")
+            .replaceAll("`", "");
+
+        const trimmed = cleanedUp.substring(0, 150);
+        return `${trimmed}...`;
     };
 }
