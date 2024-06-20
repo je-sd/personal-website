@@ -59,6 +59,7 @@ const StyledBlogPost = styled.div`
     h4 {
         font-weight: 700;
         grid-area: heading;
+        max-width: 60rem;
     }
 
     .header-component {

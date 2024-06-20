@@ -27,6 +27,9 @@ const StyledBlogPostPreview = styled.div`
     h6.heading {
         font-weight: 700;
         transition: color .1s ease-in;
+        text-decoration: underline;
+        text-decoration-color: #702963;
+        text-underline-offset: .2rem;
     }
 
     .caption {
@@ -54,7 +57,6 @@ const StyledBlogPostPreview = styled.div`
         cursor: pointer;
 
         h6 {
-            text-decoration: underline;
             color: #702963;
         }
     }
