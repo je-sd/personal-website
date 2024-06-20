@@ -8,6 +8,7 @@ import { BlogPostModel } from "../../api/model/BlogPostModel";
 import { Supabase } from "../../api/supabase";
 import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
+import { MarkdownRenderer } from "../utils/MarkdownRenderer";
 
 const BlogPost = () => {
     const params = useParams();
@@ -35,13 +36,11 @@ const BlogPost = () => {
                 <div className="content">
                     <Typography variant="h4">{blogPost.heading}</Typography>
                     <Typography variant="caption" className="credits">{blogPost.getCopyright()}</Typography>
-                    <Markdown
-                        remarkPlugins={[remarkGfm]}
-                        rehypePlugins={[rehypeRaw]} 
-                        className="blogpost-content"
-                    >
+                    <div className="blogpost-content">
+                    <MarkdownRenderer>
                         {blogPost.getContent()}
-                    </Markdown>
+                    </MarkdownRenderer>
+                    </div>
                 </div>
 
             }
