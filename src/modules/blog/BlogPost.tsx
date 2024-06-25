@@ -9,6 +9,7 @@ import { Supabase } from "../../api/supabase";
 import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
 import { MarkdownRenderer } from "../utils/MarkdownRenderer";
+import BlogEntryFooter from "../BlogEntryFooter";
 
 const BlogPost = () => {
     const params = useParams();
@@ -44,6 +45,8 @@ const BlogPost = () => {
                 </div>
 
             }
+
+            <BlogEntryFooter />
         </StyledBlogPost>
     );
 };
@@ -53,8 +56,6 @@ export default BlogPost;
 const StyledBlogPost = styled.div`
     position: relative;
     z-index: 1;
-
-    margin-bottom: 5rem;
 
     h4 {
         font-weight: 700;
@@ -67,8 +68,8 @@ const StyledBlogPost = styled.div`
     }
 
     display: grid;
-    grid-template-rows: .1rem 3rem auto;
-    grid-template-areas: "." "menu" "content";
+    grid-template-rows: .1rem 3rem auto auto; 
+    grid-template-areas: "." "menu" "content" "footer";
     grid-gap: 2rem;
 
     div.content {
